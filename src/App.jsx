@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className="container center m-4 p-3 bg-slate-400">
+      <div className="container w-full place-content-center  m-4 p-3 bg-sky-200 rounded-3xl ">
         <Heading />
         <AddTodo />
         <TodoList />
