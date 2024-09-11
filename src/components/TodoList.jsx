@@ -6,11 +6,11 @@ const TodoList = () => {
       <ol>
         <li className="grid grid-cols-3 justify-items-center my-4">
           <p>gym</p> <p>21/09/2013</p>
-          <button>X</button>
+          <button className="dlt bg-red-600 px-4 text-white rounded-3xl">X</button>
         </li>
         <li className="grid grid-cols-3 justify-items-center">
           <p>gymcvbcv</p> <p>21/09/2013</p>
-          <button>X</button>
+          <button className="dlt bg-red-600 px-4 text-white rounded-3xl">X</button>
         </li>
       </ol>
     </div>

@@ -7,14 +7,19 @@ import TodoList from "./components/TodoList";
 // import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [items, setItems] = useState([{ name: "gym", date: "02/03/2023" }]);
+  const handleItemList = (newItemName, newItemDate) => {
+    console.log(`name: ${newItemName}, date: ${newItemDate}`)
+    let newItems = [...items, { name: newItemName, date: newItemDate }];
+    setItems(newItems);
+  };
 
   return (
     <>
       <div className="container w-full place-content-center  m-4 p-3 bg-sky-200 rounded-3xl ">
         <Heading />
-        <AddTodo />
-        <TodoList />
+        <AddTodo handleItemList={handleItemList} />
+        <TodoList items={items} />
       </div>
     </>
   );
