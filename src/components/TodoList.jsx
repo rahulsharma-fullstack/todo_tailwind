@@ -1,17 +1,21 @@
 import React from "react";
 
-const TodoList = () => {
+const TodoList = ({items, handleDeleteButton}) => {
+
+  
+
+  
   return (
     <div className="my-5">
       <ol>
-        <li className="grid grid-cols-3 justify-items-center my-4">
-          <p>gym</p> <p>21/09/2013</p>
-          <button className="dlt bg-red-600 px-4 text-white rounded-3xl">X</button>
+          {items.map((value, key) => (
+
+        <li key={key} className="grid grid-cols-3 justify-items-center my-4">
+          <p>{value.name}</p> <p>{value.date}</p>
+          <button className="dlt bg-red-600 px-4 text-white rounded-3xl" onClick={()=> handleDeleteButton(key)}>X</button>
         </li>
-        <li className="grid grid-cols-3 justify-items-center">
-          <p>gymcvbcv</p> <p>21/09/2013</p>
-          <button className="dlt bg-red-600 px-4 text-white rounded-3xl">X</button>
-        </li>
+          ))}
+        
       </ol>
     </div>
   );
