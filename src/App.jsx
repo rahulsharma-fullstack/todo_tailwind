@@ -17,8 +17,9 @@ function App() {
     
   };
 
-  const handleDeleteButton = (key) => {
-    // let deleteItem = items.filter()
+  const handleDeleteButton = (name) => {
+    let deleteItem = items.filter(item => item.name !== name)
+    setItems(deleteItem)
   }
 
   return (
