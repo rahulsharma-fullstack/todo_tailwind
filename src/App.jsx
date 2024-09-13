@@ -8,6 +8,7 @@ import TodoList from "./components/TodoList";
 
 function App() {
   const [items, setItems] = useState([{ name: "gym", date: "02/03/2023" }]);
+  
   const handleItemList = (newItemName, newItemDate) => {
     console.log(`name: ${newItemName}, date: ${newItemDate}`)
     let newItems = [...items, { name: newItemName, date: newItemDate }];
