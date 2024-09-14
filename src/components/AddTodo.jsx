@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const AddTodo = ({handleItemList}) => {
-  const [itemName, setItemName] = useState()
-  const [itemDate, setItemDate] = useState()
+  const [itemName, setItemName] = useState('')
+  const [itemDate, setItemDate] = useState('')
 
   
   const handleTextItems = (e) =>{
