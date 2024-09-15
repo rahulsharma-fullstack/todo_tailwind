@@ -11,7 +11,8 @@ const AddTodo = ({handleItemList}) => {
   const handleDateItems = (e) =>{
     setItemDate(e.target.value)
   }
-  const handleAddButton = () => {
+  const handleAddButton = (e) => {
+    e.preventDefault();
 
     handleItemList(itemName, itemDate)
     setItemName("")
@@ -20,7 +21,7 @@ const AddTodo = ({handleItemList}) => {
   
   return (
     <>
-      <div className="data-add flex flex-row space-x-4 place-content-center mb-8">
+      <form onSubmit={handleAddButton} className="data-add flex flex-row space-x-4 place-content-center mb-8">
         <input
           type="text"
           className="todo_input border-gray-300 drop-shadow-xl rounded-lg border-2 outline-none text-center"
@@ -30,11 +31,11 @@ const AddTodo = ({handleItemList}) => {
           type="date"
           className="todo_input_date border-gray-300 drop-shadow-xl rounded-lg border-2 outline-none text-center" onChange={handleDateItems} value={itemDate}
         ></input>
-        <button className="add_button mx-3 border-2 rounded-2xl px-4 py-1 font-medium bg-sky-700 shadow-xl text-white hover:bg-slate-700" onClick={handleAddButton}>
+        <button className="add_button mx-3 border-2 rounded-2xl px-4 py-1 font-medium bg-sky-700 shadow-xl text-white hover:bg-slate-700">
           {" "}
           Add
         </button>
-      </div>
+      </form>
     </>
   );
 };
